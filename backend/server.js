@@ -9,7 +9,7 @@ const expenseRoutes = require('./routes/expenseRoutes');
 require('dotenv').config();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ["http://localhost:5173", "https://trackexpensetrack.netlify.app/"],
   credentials: true,
 }));
 
