@@ -11,7 +11,7 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/auth/getUser', {
+        const res = await fetch('https://expense-tracker-p0nw.onrender.com/api/auth/getUser', {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
           },

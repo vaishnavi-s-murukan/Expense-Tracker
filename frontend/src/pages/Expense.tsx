@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Plus, Trash2, TrendingDown, Download, X } from 'lucide-react';
 import EmojiPickerComponent from "../components/icons";
 import { Line } from 'react-chartjs-2';
@@ -12,7 +12,7 @@ const Expense = () => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/expense', {
+    fetch('https://expense-tracker-p0nw.onrender.com/api/expense', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ const Expense = () => {
     if (!newExpense.title || !newExpense.date || !newExpense.amount) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/expense', {
+      const response = await fetch('https://expense-tracker-p0nw.onrender.com/api/expense', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ const Expense = () => {
 
   
   const handleDelete = async (id: string) => {
-    const res = await fetch(`http://localhost:5000/api/expense/${id}`, {
+    const res = await fetch(`https://expense-tracker-p0nw.onrender.com/api/expense/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     });

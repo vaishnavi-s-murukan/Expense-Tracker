@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import { Plus, X, Trash2, TrendingUp, Download } from 'lucide-react';
 import EmojiPickerComponent from "../components/icons";
@@ -19,7 +19,7 @@ const Income = () => {
 
   // Fetch income data
   useEffect(() => {
-    fetch('http://localhost:5000/api/income', {
+    fetch('https://expense-tracker-p0nw.onrender.com/api/income', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -39,7 +39,7 @@ const Income = () => {
     if (!newIncome.title || !newIncome.date || !newIncome.amount) return;
 
     try {
-      const response = await fetch('http://localhost:5000/api/income', {
+      const response = await fetch('https://expense-tracker-p0nw.onrender.com/api/income', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ const Income = () => {
   // Handle delete income
   const handleDelete = async (id: string) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/income/${id}`, {
+      const response = await fetch(`https://expense-tracker-p0nw.onrender.com/api/income/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

@@ -49,7 +49,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const incomeRes = await fetch('http://localhost:5000/api/income', {
+        const incomeRes = await fetch('https://expense-tracker-p0nw.onrender.com/api/income', {
           headers: { Authorization: `Bearer ${token}` },
         });
         const income = await incomeRes.json();
@@ -57,7 +57,7 @@ const Dashboard = () => {
         const totalIncome: number = income.reduce((acc: number, item: IncomeItem) => acc + item.amount, 0);
         setTotalIncome(totalIncome);
 
-        const expenseRes = await fetch('http://localhost:5000/api/expense', {
+        const expenseRes = await fetch('https://expense-tracker-p0nw.onrender.com/api/expense', {
           headers: { Authorization: `Bearer ${token}` },
         });
         // last 60 days income by category
@@ -296,7 +296,7 @@ const Dashboard = () => {
         <div className="bg-white mt-6 p-6 rounded-lg shadow">
           <h3 className="text-lg font-semibold mb-4">Last 30 Days Expenses</h3>
           <div className="h-64">
-            <Bar data={barData} options={{ responsive: true, plugins: { legend: { display: false } }, scales: { x: { ticks: { display: false }, grid: { display: false } }, y: { beginAtZero: true, grid: { display: false }, }, }, barThickness: 10, }} />
+            <Bar data={barData} options={{ responsive: true, plugins: { legend: { display: false } }, scales: { x: { ticks: { display: false }, grid: { display: false } }, y: { beginAtZero: true, grid: { display: false }, }, }, datasets: { bar: { barThickness: 10 } } }} />
           </div>
         </div>
       </div>
