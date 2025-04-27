@@ -1,4 +1,5 @@
 Expense Tracker 💸
+
 A full-stack Expense Tracker app built with the MERN Stack, allowing users to track incomes and expenses, visualize data through charts, and export records for easy management.
 
 🛠️ Tech Stack
@@ -11,21 +12,36 @@ Other Libraries: React Router, ExcelJS, React Context API
 📂 Project Structure
 Backend (/backend)
 /controllers     => Handle request logic (auth, income, expense)
+
 /models          => Mongoose models (User, Income, Expense)
+
 /routes          => API routes (authRoutes, incomeRoutes, expenseRoutes)
+
 /middleware      => JWT authentication middleware
+
 /utils           => Utility functions (Excel file generator)
+
 server.js        => App entry point
+
 Frontend (/frontend)
+
 /components      => Reusable components (Sidebar, Navbar, Cards, Charts)
+
 /pages           => Pages (Dashboard, Income, Expense)
+
 /services        => API calls using Axios
+
 /context         => Global context for auth and app state
+
 /utils           => Helper functions (date formatting, etc.)
+
 main.jsx         => Frontend entry point
+
 App.jsx          => Route management
 
+
 🧩 Main Features
+
 *Authentication
 
 Register and Login (JWT-based)
@@ -61,6 +77,7 @@ Mobile-friendly with collapsible sidebar
 Smooth navigation experience
 
 ⚙️ How It Works
+
 After registration/login, a JWT token is stored and used for authentication.
 
 Income and Expense transactions are CRUD operations connected to MongoDB.
